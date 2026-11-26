@@ -1,43 +1,73 @@
-# DNA Mutation Analyzer
 
-Analizador de mutaciones en ADN | DNA Mutation Analyzer
+# Analizador de Mutaciones de ADN
 
-## Descripción
+## 1. Descripción del proyecto
 
-Proyecto educativo de bioinformática desarrollado en Python para explorar variantes genéticas conocidas mediante secuencias de ADN y consultar información documentada sobre variantes específicas.
+El Analizador de Mutaciones de ADN es un proyecto desarrollado como parte de la Maestría en Bioinformática.
 
-## Objetivos
+El objetivo es desarrollar una herramienta en Python que compare secuencias de ADN con una secuencia de referencia e identifique diferencias entre ellas.
 
-- Validar secuencias de ADN.
+El primer gen seleccionado para el proyecto piloto es BRCA1.
 
-- Buscar coincidencias con variantes conocidas en un conjunto de datos de referencia.
+## 2. Funcionalidades actuales
 
-- Consultar información sobre variantes específicas.
+- Cargar secuencias de referencia desde archivos FASTA.
+- Calcular la longitud de una secuencia de ADN.
+- Contabilizar los nucleótidos A, T, C, G y N.
+- Comparar dos secuencias de igual longitud.
+- Detectar sustituciones entre secuencias previamente alineadas.
+- Exportar las diferencias detectadas a un archivo CSV.
 
-- Presentar resultados de forma clara y documentada.
+## 3. Estructura del proyecto
 
-## Estructura del proyecto
+```text
+dna-mutation-analyzer/
+├── data/
+│   └── BRCA1.fasta
+├── scripts/
+│   └── variant_analyzer.py
+├── results/
+│   └── brca1_results.csv
+├── docs/
+├── README.md
+├── .gitignore
+└── LICENSE
+```
 
-data/: datos de referencia y variantes genéticas.
+## 4. Requisitos
 
-scripts/: código fuente en Python.
+- Python 3.
+- No se requieren bibliotecas externas adicionales para la versión actual.
 
-results/: resultados generados por el programa.
+## 5. Instrucciones de ejecución
 
-docs/: documentación y referencias científicas.
+Desde la carpeta principal del proyecto, ejecutar el siguiente comando en la terminal:
 
-## Tecnologías
+```bash
+python3 scripts/variant_analyzer.py
+```
 
-Python
+El programa solicitará una secuencia de ADN y la comparará con un fragmento de la referencia BRCA1.
 
-Git y GitHub
+## 6. Limitaciones actuales
 
-Archivos CSV y FASTA
+- La comparación requiere secuencias de igual longitud.
+- Actualmente, solo se detectan sustituciones.
+- El programa no realiza alineamiento de secuencias.
+- Las posiciones reportadas son relativas al archivo de referencia y todavía no están validadas como coordenadas genómicas.
+- El programa no identifica ni clasifica variantes clínicas documentadas.
+- Las sustituciones utilizadas en las pruebas son artificiales y no representan hallazgos clínicos.
 
-## Alcance y limitaciones
+## 7. Mejoras futuras
 
-Este proyecto tiene fines educativos. Los resultados dependen de los datos de referencia disponibles y no constituyen un diagnóstico médico.
+- Fortalecer la validación de las secuencias y el manejo de errores.
+- Incorporar alineamiento de secuencias.
+- Detectar inserciones y deleciones.
+- Establecer coordenadas genómicas y orientación de referencia correctas.
+- Investigar la integración de bases de datos confiables de variantes, como ClinVar.
+- Implementar pruebas automatizadas.
+- Mejorar la presentación y documentación de los resultados.
 
-## English summary
+## 8. Trabajo colaborativo
 
-An educational bioinformatics project developed in Python to explore known genetic variants in DNA sequences and retrieve documented information about specific variants.
+El proyecto se desarrolla en equipo y contempla la distribución de actividades entre programación, investigación biológica, validación de resultados y documentación.
